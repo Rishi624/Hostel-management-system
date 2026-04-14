@@ -1,0 +1,204 @@
+:root {
+    --bg-corridor: radial-gradient(circle at center, #2a3d45 0%, #131b20 100%);
+    --wood-dark: #3e2723;
+    --wood-light: #5d4037;
+    --gold: #d4af37;
+    --gold-glow: rgba(212, 175, 55, 0.4);
+    --text-light: #f4f1ea;
+    --card-bg: rgba(20, 30, 35, 0.85);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ================= MAIN BODY ================= */
+body {
+    background: var(--bg-corridor);
+    color: var(--text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* ================= ADMIN BODY FIX ================= */
+body.admin-body {
+    display: block; /* override flex */
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ================= APP CONTAINER ================= */
+.app-container {
+    background: var(--card-bg);
+    width: 100%;
+    max-width: 650px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    position: relative;
+}
+
+/* ================= HEADER ================= */
+.header {
+    background: linear-gradient(90deg, #131b20, #2a3d45, #131b20);
+    color: var(--gold);
+    padding: 25px;
+    text-align: center;
+    border-bottom: 2px solid var(--wood-dark);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.content-area {
+    padding: 40px;
+    perspective: 1200px;
+}
+
+/* ================= STEP ANIMATION ================= */
+.step {
+    display: none;
+    animation: swingIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    transform-origin: left center;
+}
+
+.step.active {
+    display: block;
+}
+
+@keyframes swingIn {
+    0% { opacity: 0; transform: rotateY(-60deg) translateX(-50px); }
+    100% { opacity: 1; transform: rotateY(0deg) translateX(0); }
+}
+
+/* ================= INPUTS ================= */
+input, select {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    font-size: 16px;
+    color: white;
+    transition: 0.3s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+select option {
+    background: #2a3d45;
+    color: white;
+}
+
+/* ================= BUTTONS ================= */
+button.btn-primary {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(145deg, #e6c258, var(--gold));
+    color: #131b20;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--gold-glow);
+}
+
+button.btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px) scale(1.02);
+}
+
+button.btn-primary:disabled {
+    background: #555;
+    color: #888;
+    cursor: not-allowed;
+}
+
+button.btn-back {
+    background: transparent;
+    color: var(--gold);
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* ================= ADMIN NAV ================= */
+.admin-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #131b20, #2a3d45);
+    color: var(--gold);
+    padding: 20px 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+/* ================= LOGOUT BUTTON ================= */
+.btn-logout {
+    padding: 10px 20px;
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-logout:hover {
+    background: var(--gold);
+    color: #131b20;
+}
+
+/* ================= ADMIN CONTAINER ================= */
+.admin-container {
+    width: 100%;
+}
+
+.admin-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    border-top: 5px solid var(--gold);
+}
+
+.admin-card h2 {
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.admin-card label {
+    display: block;
+    color: var(--gold);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* ================= ADMIN ROOM LIST ================= */
+#admin-room-list li {
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 5px solid var(--gold);
+}

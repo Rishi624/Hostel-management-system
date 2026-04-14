@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Hostel Access</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-container">
+    <div class="header">
+        <h1 id="header-title">Hostel Access</h1>
+    </div>
+
+    <div class="content-area">
+        
+        <div id="step-auth" class="step active">
+            <h2 id="auth-title">Welcome Back</h2>
+            <p style="margin-bottom: 20px; color: #666;">Unlock your door.</p>
+            
+            <form id="auth-form">
+                <div id="name-field" style="display: none;">
+                    <label>Full Name</label>
+                    <input type="text" id="name" placeholder="Rishyendra">
+                </div>
+
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="student@example.com" required>
+                
+                <label>Password</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+                
+                <button type="submit" class="btn-primary" id="auth-btn">Authenticate</button>
+            </form>
+            <p class="auth-toggle" id="toggle-auth-btn">Need an account? Sign Up here.</p>
+        </div>
+
+        <div id="step-type" class="step">
+            <h2>Select Room Type</h2>
+            
+            <label>Sharing Preference</label>
+            <select id="sharing-select">
+                <option value="2">2 Sharing</option>
+                <option value="3">3 Sharing</option>
+                <option value="4">4 Sharing</option>
+            </select>
+
+            <label>AC Preference</label>
+            <select id="ac-select">
+                <option value="AC">AC</option>
+                <option value="Non-AC">Non-AC</option>
+            </select>
+
+            <button class="btn-primary" id="find-rooms-btn">Find Rooms</button>
+        </div>
+
+        <div id="step-room" class="step">
+            <button class="btn-back" id="back-to-types">← Back to Types</button>
+            <h2>Available Rooms</h2>
+            <p id="room-status-text" style="margin-bottom: 15px;">Showing rooms for your selection.</p>
+            
+            <div class="grid-options" id="room-grid">
+                </div>
+
+            <button class="btn-primary" id="proceed-checkout-btn" disabled>Proceed to Payment</button>
+        </div>
+
+        <div id="step-pay" class="step">
+            <button class="btn-back" id="back-to-rooms">← Back to Corridors</button>
+            <h2 style="color: var(--gold); margin-bottom: 20px;">Checkout</h2>
+            
+            <div class="receipt-box">
+                <p><span>Selected Room:</span> <strong id="checkout-room">None</strong></p>
+                <p><span>Monthly Rent:</span> <strong>₹<span id="checkout-rent">0</span></strong></p>
+                <p><span>Security Deposit:</span> <strong>₹10,000</strong></p>
+                <hr>
+                <h3><span>Total Due Now:</span> <span>₹<span id="checkout-total">0</span></span></h3>
+            </div>
+
+            <button class="btn-primary" id="pay-btn">Confirm & Unlock Room</button>
+        </div>
+
+        <div id="step-dashboard" class="step">
+            <h2 style="color: var(--gold);">🎉 Room Unlocked!</h2>
+            <p style="color: #bbb;">Your key is ready. Welcome to your new space.</p>
+            
+            <div class="dash-info">
+                <p><strong style="color: var(--gold);">Resident:</strong> <span id="dash-name">Loading...</span></p>
+                <p><strong style="color: var(--gold);">Contact:</strong> <span id="dash-email">Loading...</span></p>
+                <p><strong style="color: var(--gold);">Room Assigned:</strong> <span id="dash-room">Loading...</span></p>
+            </div>
+
+            <div style="display: flex; gap: 15px; margin-top: 30px;">
+                <button class="btn-primary" id="hand-key-btn" style="background: #e74c3c; color: white;">Hand in Key</button>
+                <button class="btn-primary" id="logout-btn" style="background: #3e2723; color: white;">Logout</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

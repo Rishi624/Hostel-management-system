@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-body">
+
+    <nav class="admin-nav"> 
+        <h1>Admin Control Panel</h1>
+        <button id="logout-btn" class="btn-logout">Secure Logout</button>
+    </nav>
+
+    <div class="admin-container">
+        <div class="dashboard-grid">
+            
+            <div class="admin-card">
+                <h2>➕ Add New Room Type & Room</h2>
+                <form id="add-room-form">
+                    <label>Room Number</label>
+                    <input type="text" id="room-number" placeholder="e.g. 101" required>
+
+                    <label>Sharing Capacity</label>
+                    <input type="number" id="sharing-type" placeholder="e.g. 2 for 2-share" required>
+
+                    <label>AC / Non-AC</label>
+                    <select id="ac-type">
+                        <option value="AC">AC</option>
+                        <option value="Non-AC">Non-AC</option>
+                    </select>
+
+                    <label>Price Per Month (₹)</label>
+                    <input type="number" id="price" placeholder="5000" required>
+
+                    <button type="submit" class="btn-primary" style="margin-top: 15px;">Create Room</button>
+                </form>
+            </div>
+
+            <div class="admin-card">
+                <h2>🏢 All System Rooms</h2>
+                <ul id="admin-room-list">
+                    </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <script type="module" src="js/admin.js"></script>
+</body>
+</html>
