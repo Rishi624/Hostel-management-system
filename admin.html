@@ -43,7 +43,23 @@
                 <ul id="admin-room-list">
                     </ul>
             </div>
+            <div class="admin-card">
+                <h2>💰 Manage Deposits & Deductions</h2>
+                <form id="deduction-form">
+                    <label>Select Resident's Deposit</label>
+                    <select id="deposit-select" required>
+                        <option value="">Loading residents...</option>
+                    </select>
 
+                    <label>Reason for Deduction</label>
+                    <input type="text" id="deduction-reason" placeholder="e.g., Broken Window, Lost Key" required>
+
+                    <label>Amount to Deduct (₹)</label>
+                    <input type="number" id="deduction-amount" placeholder="500" required>
+
+                    <button type="submit" class="btn-primary" style="margin-top: 15px; background: #e74c3c; color: white;">Apply Deduction</button>
+                </form>
+            </div>
         </div>
     </div>
 
